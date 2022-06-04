@@ -9,28 +9,28 @@ app.use(cors());
 const allomanticMetals = [
   // Physical Metals 
   {
-    'name': 'Steel',
+    'name': 'steel',
     'mistingType': 'Coinshot',
     'influence': 'External',
     'type': 'Pushing',
     'effect': 'Physical'
   },
   {
-    'name': 'Iron',
+    'name': 'iron',
     'mistingType': 'Lurcher',
     'influence': 'External',
     'type': 'Pulling',
     'effect': 'Physical'
   },
   {
-    'name': 'Pewter',
+    'name': 'pewter',
     'mistingType': 'Thug',
     'influence': 'Internal',
     'type': 'Pushing',
     'effect': 'Physical'
   },
   {
-    'name': 'Tin',
+    'name': 'tin',
     'mistingType': 'Tineye',
     'influence': 'Internal',
     'type': 'Pulling',
@@ -38,28 +38,28 @@ const allomanticMetals = [
   },
   // Mental Metals
   {
-    'name': 'Zinc',
+    'name': 'zinc',
     'mistingType': 'Rioter',
     'influence': 'External',
     'type': 'Pulling',
     'effect': 'Mental'
   },
   {
-    'name': 'Brass',
+    'name': 'brass',
     'mistingType': 'Soother',
     'influence': 'External',
     'type': 'Pushing',
     'effect': 'Mental'
   },
   {
-    'name': 'Copper',
+    'name': 'copper',
     'mistingType': 'Smoker',
     'influence': 'Internal',
     'type': 'Pulling',
     'effect': 'Mental'
   },
   {
-    'name': 'Bronze',
+    'name': 'bronze',
     'mistingType': 'Seeker',
     'influence': 'Internal',
     'type': 'Pushing',
@@ -67,7 +67,7 @@ const allomanticMetals = [
   },
   // Other
   {
-    'name': 'Gold',
+    'name': 'gold',
     'mistingType': 'Augur',
     'influence': 'Internal',
     'type': 'Pulling',
@@ -85,10 +85,10 @@ app.get('/api', (req, res) => {
 
 app.get('/api/:metal', (req, res) => {
   const metalName = req.params.metal;
-  const metal = allomanticMetals.find(metal => metal.name = metalName);
-
+  const metal = allomanticMetals.find(metal => metal['name'] === metalName);
+  
   if(metal) {
-    res.json(metal.mistingType);
+    res.json(metal);
   }
    else {
      res.status(404).end();

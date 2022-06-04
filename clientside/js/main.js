@@ -7,7 +7,9 @@ btn.addEventListener('click', apiRequest);
 async function apiRequest() {
   const metal = metals.options[metals.selectedIndex].value;
   try {
-    const misting = await fetch(`https://misting-api.herokuapp.com/api/${metal}`);
+    const res = await fetch(`https://misting-api.herokuapp.com/api/${metal}`);
+    const misting = await res.json();
+
     mistingHeader.textContent = `Misting: ${misting}`;
 
   } catch(err) {
