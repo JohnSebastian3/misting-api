@@ -9,7 +9,7 @@ async function apiRequest() {
   try {
     const res = await fetch(`https://misting-api.herokuapp.com/api/${metal}`);
     const metalInfo = await res.json();
-    console.log(metalInfo);
+
     mistingHeader.textContent = `Misting: ${metalInfo.mistingType}`;
 
   } catch(err) {
