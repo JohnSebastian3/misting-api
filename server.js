@@ -95,6 +95,9 @@ app.get('/api/:metal', (req, res) => {
    }
 }) 
 
+app.get('/clientside/js/main.js', (req, res) => {
+  res.sendFile(__dirname + '/clientside/js/main.js');
+})
 
 
 app.listen(process.env.PORT || PORT, () => {
