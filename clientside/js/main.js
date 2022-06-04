@@ -8,9 +8,9 @@ async function apiRequest() {
   const metal = metals.options[metals.selectedIndex].value;
   try {
     const res = await fetch(`https://misting-api.herokuapp.com/api/${metal}`);
-    const misting = await res.json();
-
-    mistingHeader.textContent = `Misting: ${misting}`;
+    const metalInfo = await res.json();
+    console.log(metalInfo);
+    mistingHeader.textContent = `Misting: ${metalInfo.mistingType}`;
 
   } catch(err) {
     console.error(err);

@@ -86,7 +86,7 @@ app.get('/api', (req, res) => {
 app.get('/api/:metal', (req, res) => {
   const metalName = req.params.metal;
   const metal = allomanticMetals.find(metal => metal['name'] === metalName);
-  
+
   if(metal) {
     res.json(metal);
   }
