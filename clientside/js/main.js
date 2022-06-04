@@ -5,6 +5,8 @@ const mistingHeader = document.querySelector('#misting');
 btn.addEventListener('click', apiRequest);
 
 async function apiRequest() {
-  console.log(metals);
+  const metal = metals.options[metals.selectedIndex].value;
   const misting = await fetch(`https://misting-api.herokuapp.com/api/${metal}`);
+
+  mistingHeader.textContent = `Misting: ${misting}`;
 }
